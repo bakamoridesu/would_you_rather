@@ -8,8 +8,10 @@ import LoadingBar from 'react-redux-loading'
 import {connect} from "react-redux";
 import {
   BrowserRouter as Router,
-  Route} from 'react-router-dom'
+  Route
+} from 'react-router-dom'
 import QuestionSummary from "./QuestionSummary";
+import Auth from "./Auth";
 
 class App extends Component {
   componentDidMount() {
@@ -19,21 +21,25 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
-          <LoadingBar/>
-          <Nav userName={this.props.userName} avatarURL={this.props.avatarURL}/>
-          {
-            this.props.loading === true
-              ? null
-              : <div>
+        {this.props.authedUser === null
+          ? <Auth/>
+          :
+          (<div className="container">
+            <LoadingBar/>
+            <Nav userName={this.props.userName} avatarURL={this.props.avatarURL}/>
+            {
+              this.props.loading === true
+                ? null
+                : <div>
                   <Route path='/' exact component={Home}/>
                   <Route path='/new' exact component={NewQuestion}/>
                   <Route path='/leaderboard' exact component={Leaderboard}/>
                   <Route path='/question/:id' component={QuestionSummary}/>
                   <Route path='/answer/:id' component={QuestionSummary}/>
                 </div>
-          }
-        </div>
+            }
+          </div>)
+        }
       </Router>
     )
   }

@@ -1,7 +1,15 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {setAuthedUser} from "../actions/authedUser";
+import {Link} from 'react-router-dom'
 
 class Nav extends Component {
+
+  handleLogout = () => {
+    this.props.dispatch(setAuthedUser(null))
+  }
+
   render() {
     return (
       <nav className='nav'>
@@ -21,19 +29,25 @@ class Nav extends Component {
               Leaderboard
             </NavLink>
           </li>
-          <li>
+          <div>
 
-          </li>
-          <li>
+          </div>
+          <div className='nav-greet'>
             Welcome, {this.props.userName}
+          </div>
+
+
+          <li>
+            <Link to='/' onClick={this.handleLogout}>
+              Logout
+            </Link>
           </li>
-          <button onClick={this.handleLogout}>
-            Logout
-          </button>
+
         </ul>
         <hr/>
       </nav>
     )
   }
 }
-export default Nav
+
+export default connect()(Nav)
