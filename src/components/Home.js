@@ -20,10 +20,10 @@ class Home extends Component {
           </TabList>
 
           <TabPanel>
-            <Questions questions={answeredQuestions}/>
+            <Questions questions={answeredQuestions} answered={true}/>
           </TabPanel>
           <TabPanel>
-            <Questions questions={unansweredQuestions}/>
+            <Questions questions={unansweredQuestions} answered={false}/>
           </TabPanel>
         </Tabs>
       </div>

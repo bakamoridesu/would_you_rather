@@ -2,7 +2,11 @@ import React, {Component} from 'react';
 import Home from "./Home";
 import {handleInitialData} from "../actions/shared";
 import LoadingBar from 'react-redux-loading'
-import { connect } from "react-redux";
+import {connect} from "react-redux";
+import {
+  BrowserRouter as Router,
+  Route} from 'react-router-dom'
+import QuestionSummary from "./QuestionSummary";
 
 class App extends Component {
   componentDidMount() {
@@ -11,20 +15,25 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
-        <LoadingBar/>
-        {
-          this.props.loading === true
-            ? null
-            : <Home/>
-        }
-      </div>
+      <Router>
+        <div className="container">
+          <LoadingBar/>
+          {
+            this.props.loading === true
+              ? null
+              : <div>
+                  <Route path='/' exact component={Home}/>
+                  <Route path='/question/:id' component={QuestionSummary}/>
+                </div>
+          }
+        </div>
+      </Router>
     )
   }
 
 }
 
-function mapStateToProps({authedUser}){
+function mapStateToProps({authedUser}) {
   return {
     loading: authedUser === null
   }

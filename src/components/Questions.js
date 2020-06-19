@@ -7,7 +7,7 @@ class Questions extends Component {
         {
           this.props.questions.map((q) => (
             <li key={q}>
-              <QuestionSummary id={q}/>
+              <QuestionSummary id={q} answered={this.props.answered} viewMode='preview'/>
             </li>
           ))
         }
