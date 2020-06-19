@@ -3,7 +3,7 @@ import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import Questions from "./Questions";
 import 'react-tabs/style/react-tabs.css';
 import {handleInitialData} from "../actions/shared";
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 class Home extends Component {
 
@@ -15,16 +15,16 @@ class Home extends Component {
         <Tabs className='question-tabs'
               selectedTabClassName='question-tabs__tab--selected'>
           <TabList className='question-tabs__tab-list'>
-            <Tab className='question-tabs__tab'>Answered questions</Tab>
             <Tab className='question-tabs__tab'>Unanswered questions</Tab>
+            <Tab className='question-tabs__tab'>Answered questions</Tab>
           </TabList>
-
-          <TabPanel>
-            <Questions questions={answeredQuestions} answered={true}/>
-          </TabPanel>
           <TabPanel>
             <Questions questions={unansweredQuestions} answered={false}/>
           </TabPanel>
+          <TabPanel>
+            <Questions questions={answeredQuestions} answered={true}/>
+          </TabPanel>
+
         </Tabs>
       </div>
     )
