@@ -320,3 +320,43 @@ li {
     display: table;
     margin: 0 auto;
 }
+
+.result-details {
+    padding-left: 30px;
+    border-left: 1px solid #eee;
+
+    flex: 1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-option {
+    margin: 10px;
+    padding: 15px;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #aaa;
+    border-radius: 30px;
+}
+
+.result-option-selected {
+    margin: 10px;
+    padding: 15px;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FFD7C1;
+    border-radius: 30px;
+    background: #79de5b;
+}
+
