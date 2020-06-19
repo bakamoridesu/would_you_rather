@@ -19,9 +19,10 @@ export default function Nav(props) {
 
         </li>
         <li>
-           Welcome, {props.authedUser}
+           Welcome, {props.userName}
         </li>
       </ul>
+      <hr/>
     </nav>
   )
 }
