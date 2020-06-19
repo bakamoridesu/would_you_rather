@@ -9,9 +9,11 @@ import {connect} from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
+  Switch
 } from 'react-router-dom'
 import QuestionSummary from "./QuestionSummary";
 import Auth from "./Auth";
+import NotFound from "./NotFound";
 
 class App extends Component {
   componentDidMount() {
@@ -31,11 +33,14 @@ class App extends Component {
               this.props.loading === true
                 ? null
                 : <div>
-                  <Route path='/' exact component={Home}/>
-                  <Route path='/new' exact component={NewQuestion}/>
-                  <Route path='/leaderboard' exact component={Leaderboard}/>
-                  <Route path='/question/:id' component={QuestionSummary}/>
-                  <Route path='/answer/:id' component={QuestionSummary}/>
+                  <Switch>
+                    <Route path='/' exact component={Home}/>
+                    <Route path='/new' exact component={NewQuestion}/>
+                    <Route path='/leaderboard' exact component={Leaderboard}/>
+                    <Route path='/question/:id' component={QuestionSummary}/>
+                    <Route path='/answer/:id' component={QuestionSummary}/>
+                    <Route component={NotFound}/>
+                  </Switch>
                 </div>
             }
           </div>)
