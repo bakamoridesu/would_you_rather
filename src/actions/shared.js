@@ -1,11 +1,7 @@
 import { getInitialData, saveQuestionAnswer } from "../utils/api";
 import { receiveUsers, userSaveAnswer } from "./users";
 import { receiveQuestions, questionSaveAnswer } from "./questions";
-import { getAuthedUser } from "./authedUser";
 import { showLoading, hideLoading} from "react-redux-loading";
-
-
-const AUTHED_ID = 'natsudragneel'
 
 export function handleInitialData() {
   return(dispatch) => {

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import Questions from "./Questions";
 import 'react-tabs/style/react-tabs.css';
-import {handleInitialData} from "../actions/shared";
 import {connect} from 'react-redux'
 
 class Home extends Component {

@@ -9,7 +9,6 @@ import {connect} from "react-redux";
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
 } from 'react-router-dom'
 import QuestionSummary from "./QuestionSummary";
 import Auth from "./Auth";
