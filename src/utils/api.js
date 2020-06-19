@@ -2,6 +2,7 @@ import {
   _getQuestions,
   _getUsers,
   _saveQuestionAnswer,
+  _saveQuestion,
 } from './_Data'
 
 export function getInitialData() {
@@ -15,7 +16,10 @@ export function getInitialData() {
 }
 
 export function saveQuestionAnswer(authedUser, qid, answer){
-  console.log(qid)
   return _saveQuestionAnswer({authedUser, qid, answer})
 }
 
+export function saveQuestion(optionOneText, optionTwoText, author){
+  console.log('api', author)
+  return _saveQuestion({optionOneText, optionTwoText, author})
+}

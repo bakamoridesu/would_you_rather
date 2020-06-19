@@ -378,6 +378,7 @@ li {
 }
 .form-style-5 fieldset{
 	border: none;
+    margin-top: 30px;
 }
 .form-style-5 legend {
 	font-size: 1.4em;
@@ -387,16 +388,9 @@ li {
 	display: block;
 	margin-bottom: 8px;
 }
-.form-style-5 input[type="text"],
-.form-style-5 input[type="date"],
-.form-style-5 input[type="datetime"],
-.form-style-5 input[type="email"],
-.form-style-5 input[type="number"],
-.form-style-5 input[type="search"],
-.form-style-5 input[type="time"],
-.form-style-5 input[type="url"],
-.form-style-5 textarea,
-.form-style-5 select {
+
+.form-style-5 textarea
+{
 	font-family: Georgia, "Times New Roman", Times, serif;
 	background: rgba(255,255,255,.1);
 	border: none;
