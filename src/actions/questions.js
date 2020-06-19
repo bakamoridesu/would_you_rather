@@ -1,4 +1,5 @@
 import { saveQuestion } from "../utils/api";
+import { addQuestionToUser } from "./users";
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const QUESTION_SAVE_ANSWER = 'QUESTION_SAVE_ANSWER'
@@ -32,6 +33,9 @@ export function handleSaveQuestion(optionOneText, optionTwoText){
     const {authedUser} = getState()
     console.log('handleSave ', authedUser)
     return saveQuestion(optionOneText, optionTwoText, authedUser)
-      .then((question) => dispatch(addQuestion(question)))
+      .then((question) => {
+        dispatch(addQuestion(question))
+        dispatch(addQuestionToUser(question.author, question.id))
+      })
   }
 }
