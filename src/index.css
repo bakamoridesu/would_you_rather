@@ -222,3 +222,65 @@ li {
   display: block;
   background: #C3392A;
 }
+
+.question-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.question-item-details {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #aaa;
+  border-radius: 20px;
+  padding: 10px;
+  background: white;
+}
+
+.question-list-item {
+
+  background: white;
+  display: flex;
+}
+
+.question-avatar {
+  width: 160px;
+  height: 160px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+
+.question-details {
+  padding-left: 100px;
+  border-left: 1px solid #eee;
+
+  flex: 1;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.question-details p {
+  margin: 10px;
+  padding: 5px;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #aaa;
+  border-radius: 10px;
+}
+
+.question-details p:hover {
+  background: #FFD7C1;
+  cursor: pointer;
+}

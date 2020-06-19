@@ -13,7 +13,11 @@ class App extends Component {
     return (
       <div className="container">
         <LoadingBar/>
-        <Home/>
+        {
+          this.props.loading === true
+            ? null
+            : <Home/>
+        }
       </div>
     )
   }

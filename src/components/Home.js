@@ -3,9 +3,13 @@ import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 import Questions from "./Questions";
 import 'react-tabs/style/react-tabs.css';
 import {handleInitialData} from "../actions/shared";
+import { connect } from 'react-redux'
+
 class Home extends Component {
 
   render() {
+    const {answeredQuestions, unansweredQuestions} = this.props
+
     return (
       <div className='container'>
         <Tabs className='question-tabs'
@@ -16,10 +20,10 @@ class Home extends Component {
           </TabList>
 
           <TabPanel>
-            <Questions value="Answered"/>
+            <Questions questions={answeredQuestions}/>
           </TabPanel>
           <TabPanel>
-            <Questions value="Unanswered"/>
+            <Questions questions={unansweredQuestions}/>
           </TabPanel>
         </Tabs>
       </div>
@@ -27,4 +31,15 @@ class Home extends Component {
   }
 }
 
-export default Home
+function mapStateToProps({questions, users, authedUser}) {
+  const answeredQuestions = Object.keys(users[authedUser].answers)
+  const unansweredQuestions = Object.keys(questions).filter((q) => {
+    return !answeredQuestions.includes(q)
+  })
+  return {
+    answeredQuestions,
+    unansweredQuestions,
+  }
+}
+
+export default connect(mapStateToProps)(Home)

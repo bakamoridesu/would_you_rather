@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-
+import QuestionSummary from "./QuestionSummary";
 class Questions extends Component {
   render() {
     return (
-      <div>
-        {this.props.value}
-      </div>
+      <ul className='question-list'>
+        {
+          this.props.questions.map((q) => (
+            <li key={q}>
+              <QuestionSummary id={q}/>
+            </li>
+          ))
+        }
+      </ul>
     );
   }
 
