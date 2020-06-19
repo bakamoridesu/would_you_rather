@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { handleSaveQuestion } from "../actions/questions";
+import { Redirect } from 'react-router-dom'
 
 class NewQuestion extends Component {
   state = {
     optionOne: '',
     optionTwo: '',
+    toHome: false,
   }
 
   handleChangeOptionOne = (e) => {
@@ -27,9 +29,19 @@ class NewQuestion extends Component {
     this.props.dispatch(handleSaveQuestion(
       this.state.optionOne,
       this.state.optionTwo))
+    this.setState({
+      optionOne: '',
+      optionTwo: '',
+      toHome: true
+    })
   }
 
   render() {
+
+    if(this.state.toHome){
+      return <Redirect to='/'/>
+    }
+
     return (
 
       <form className="form-style-5" onSubmit={this.handleSubmit}>

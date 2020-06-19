@@ -41,11 +41,11 @@ let questions = {
     timestamp: 1467166872634,
     optionOne: {
       votes: ['lucyheartfilia'],
-      text: 'have horrible short term memory',
+      text: 'buy a magic key',
     },
     optionTwo: {
       votes: [],
-      text: 'have horrible long term memory'
+      text: 'buy plenty of clothes'
     }
   },
   "6ni6ok3ym7mf1p33lnez": {
@@ -54,11 +54,11 @@ let questions = {
     timestamp: 1468479767190,
     optionOne: {
       votes: [],
-      text: 'become a superhero',
+      text: 'eat a tasty fish',
     },
     optionTwo: {
       votes: ['happydragneel', 'lucyheartfilia'],
-      text: 'become a supervillain'
+      text: 'eat 2 tasty fishes'
     }
   },
   "am8ehyc8byjqgar0jgpub9": {
@@ -67,11 +67,11 @@ let questions = {
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
-      text: 'be telekinetic',
+      text: 'have a photoset for a glamour magazine',
     },
     optionTwo: {
       votes: ['lucyheartfilia'],
-      text: 'be telepathic'
+      text: 'go shopping for a week!'
     }
   },
   "loxhs1bqm25b708cmbf3g": {
@@ -80,11 +80,11 @@ let questions = {
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
-      text: 'be a front-end developer',
+      text: 'burn a town with a fire',
     },
     optionTwo: {
       votes: ['lucyheartfilia'],
-      text: 'be a back-end developer'
+      text: 'eat one hundred chicken legs'
     }
   },
   "vthrdm985a262al8qx3do": {
@@ -93,11 +93,11 @@ let questions = {
     timestamp: 1489579767190,
     optionOne: {
       votes: ['natsudragneel'],
-      text: 'find $50 yourself',
+      text: 'complete a 100 000$ task',
     },
     optionTwo: {
       votes: ['happydragneel'],
-      text: 'have your best friend find $500'
+      text: 'find 10 000$ on a road'
     }
   },
   "xj352vofupe1dqz9emx13r": {
@@ -106,11 +106,11 @@ let questions = {
     timestamp: 1493579767190,
     optionOne: {
       votes: ['happydragneel'],
-      text: 'write JavaScript',
+      text: 'learn new magic power',
     },
     optionTwo: {
       votes: ['natsudragneel'],
-      text: 'write Swift'
+      text: 'learn new combat ability'
     }
   },
 }

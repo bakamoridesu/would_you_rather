@@ -8,7 +8,8 @@ import LoadingBar from 'react-redux-loading'
 import {connect} from "react-redux";
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Redirect,
 } from 'react-router-dom'
 import QuestionSummary from "./QuestionSummary";
 import Auth from "./Auth";

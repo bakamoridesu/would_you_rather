@@ -29,13 +29,11 @@ class Nav extends Component {
               Leaderboard
             </NavLink>
           </li>
-          <div>
 
-          </div>
           <div className='nav-greet'>
-            Welcome, {this.props.userName}
+            <span>Welcome, {this.props.userName}</span>
+            <span className='user-avatar-min' style={{backgroundImage: this.props.avatarURL}}/>
           </div>
-
 
           <li>
             <Link to='/' onClick={this.handleLogout}>
