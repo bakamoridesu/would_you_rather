@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Home from "./Home";
+import Nav from "./Nav";
 import {handleInitialData} from "../actions/shared";
 import LoadingBar from 'react-redux-loading'
 import {connect} from "react-redux";
@@ -18,6 +19,7 @@ class App extends Component {
       <Router>
         <div className="container">
           <LoadingBar/>
+          <Nav authedUser={this.props.authedUser} avatarURL={this.props.avatarURL}/>
           {
             this.props.loading === true
               ? null
@@ -34,9 +36,11 @@ class App extends Component {
 
 }
 
-function mapStateToProps({authedUser}) {
+function mapStateToProps({authedUser, users}) {
   return {
-    loading: authedUser === null
+    loading: authedUser === null,
+    authedUser,
+    avatarURL: users[authedUser] ? users[authedUser].avatarURL : null,
   }
 }
 
